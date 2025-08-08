@@ -1,0 +1,140 @@
+{
+    "trafficChartData": {
+        "labels": [
+            "0",
+            "25",
+            "50",
+            "100"
+        ],
+        "datasets": [
+            {
+                "label": "Traffic",
+                "backgroundColor": "rgba(54,162,235,0.2)",
+                "borderColor": "rgba(54,162,235,1)",
+                "pointBackgroundColor": "rgba(54,162,235,1)",
+                "pointBorderColor": "#fff",
+                "data": [
+                    40,
+                    40,
+                    40,
+                    40
+                ],
+                "fill": true,
+                "tension": 0,
+                "pointRadius": 0,
+                "pointHoverRadius": 0
+            }
+        ]
+    },
+    "trafficData": {
+        "0": {
+            "title": "Total Traffic",
+            "up": "6 Kbps",
+            "down": "4.2 Kbps"
+        },
+        "1": {
+            "title": "TCP Traffic",
+            "up": "6 Kbps",
+            "down": "4.2 Kbps"
+        },
+        "2": {
+            "title": "UDP Traffic",
+            "up": "6 Kbps",
+            "down": "4.2 Kbps"
+        },
+        "3": {
+            "title": "RTT Traffic",
+            "up": "6 Kbps",
+            "down": "4.2 Kbps"
+        }
+    },
+    "graphTitle": {
+        "CPU (%)": {
+            "chartData": {
+                "labels": [
+                    "0",
+                    "25",
+                    "50",
+                    "100"
+                ],
+                "datasets": [
+                    {
+                        "label": "CPU Usage",
+                        "backgroundColor": "rgba(75,192,192,0.2)",
+                        "borderColor": "rgba(54,162,235,1)",
+                        "pointBackgroundColor": "rgba(75,192,192,1)",
+                        "pointBorderColor": "#fff",
+                        "data": [
+                            50,
+                            50,
+                            50,
+                            50
+                        ],
+                        "fill": true,
+                        "tension": 0,
+                        "pointRadius": 0,
+                        "pointHoverRadius": 0
+                    }
+                ]
+            }
+        },
+        "Memory (%)": {
+            "chartData": {
+                "labels": [
+                    "0",
+                    "25",
+                    "50",
+                    "100"
+                ],
+                "datasets": [
+                    {
+                        "label": "Memory Usage",
+                        "backgroundColor": "rgba(75,192,192,0.2)",
+                        "borderColor": "rgba(54,162,235,1)",
+                        "pointBackgroundColor": "rgba(75,192,192,1)",
+                        "pointBorderColor": "#fff",
+                        "data": [
+                            50,
+                            50,
+                            50,
+                            50
+                        ],
+                        "fill": true,
+                        "tension": 0,
+                        "pointRadius": 0,
+                        "pointHoverRadius": 0
+                    }
+                ]
+            }
+        },
+        "Disk (%)": {
+            "chartData": {
+                "labels": [
+                    "0",
+                    "25",
+                    "50",
+                    "100"
+                ],
+                "datasets": [
+                    {
+                        "label": "Disk Usage",
+                        "backgroundColor": "rgba(75,192,192,0.2)",
+                        "borderColor": "rgba(54,162,235,1)",
+                        "pointBackgroundColor": "rgba(75,192,192,1)",
+                        "pointBorderColor": "#fff",
+                        "data": [
+                            50,
+                            50,
+                            50,
+                            50
+                        ],
+                        "fill": true,
+                        "tension": 0,
+                        "pointRadius": 0,
+                        "pointHoverRadius": 0
+                    }
+                ]
+            }
+        }
+    }
+}

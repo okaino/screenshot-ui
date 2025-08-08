@@ -12,5 +12,6 @@
 <style scoped>
 .settings {
   padding: 2rem;
+  color: black;
 }
 </style>

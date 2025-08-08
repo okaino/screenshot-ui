@@ -12,7 +12,7 @@
         <span style="margin-right: 8px;">🏠</span>
         <p class="nav-title">Dashboard</p>
       </router-link>
-      <router-link class="router-link" to="/settings" exact-active-class="router-link-exact-active" >
+      <router-link class="router-link" to="/device-management" exact-active-class="router-link-exact-active" >
         <span style="margin-right: 8px;">📋</span>
         <p class="nav-title">Device Management</p>
       </router-link>
@@ -20,7 +20,7 @@
         <span style="margin-right: 8px;">⚙️</span>
         <p class="nav-title">Settings</p>
       </router-link>
-      <router-link class="router-link" to="/settings" exact-active-class="router-link-exact-active" >
+      <router-link class="router-link" to="/support" exact-active-class="router-link-exact-active" >
         <span style="margin-right: 8px;">📁</span>
         <p class="nav-title">Support</p>
       </router-link>

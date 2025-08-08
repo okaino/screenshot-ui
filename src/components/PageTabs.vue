@@ -1,19 +1,17 @@
 <template>
   <div class="page-tabs">
-    <button :class="{ active: currentTab === 'Home' }" @click="emitTab('Home')">
-      <span>🏠 Home</span>
-    </button>
-    <button :class="{ active: currentTab === 'Analysis' }" @click="emitTab('Analysis')">
-      <span>📊 Analysis</span>
-    </button>
-    <button :class="{ active: currentTab === 'Settings' }" @click="emitTab('Settings')">
-      <span>⚙️ Settings</span>
-    </button>
-    <button :class="{ active: currentTab === 'Logs' }" @click="emitTab('Logs')">
-      <span>📜 Logs</span>
+
+    <button
+      v-for="(tab, index) in tabs"
+      :key="index"
+      :class="{ active: currentTab === tab }"
+      @click="emitTab(tab)"
+    >
+      {{ tab }}
     </button>
   </div>
 </template>
+
 <script setup>
 import { defineProps, defineEmits } from 'vue';
 const props = defineProps({
@@ -23,18 +21,21 @@ const emit = defineEmits(['tab-change']);
 function emitTab(tab) {
   emit('tab-change', tab);
 }
+const tabs = ['Home', 'Analysis', 'Settings', 'Logs'];
+const activeTab = 0;
 </script>
 
 <style>
 .page-tabs button {
   background-color: transparent;
-  border-bottom: #002fff 2px solid
-}
-.page-tabs button {
-  background-color: transparent;
   color: #002fff;
   height: 100%;
+  border-bottom: 2px solid #002fff;
   border-radius: 0%;
+}
+.page-tabs button.active {
+  border-bottom: 2px solid black;
+  color: #002fff;
 }
 .page-tabs {
   display: flex;

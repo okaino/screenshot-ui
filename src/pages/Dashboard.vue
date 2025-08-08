@@ -22,9 +22,9 @@
         </button>
       </div>
       <div class="user-card" style="">
-        <div class="switches" v-for="i in 4" :key="i">
-          <h4>Acceleration</h4>
-          <SwitchToogle v-model="switchValue[i - 1]" />
+        <div class="switches" v-for="title in switchTitles" :key="title">
+          <h4>{{ title }}</h4>
+          <SwitchToogle v-model="switchValue[switchTitles.indexOf(title)]" />
         </div>
         <button
           style="display: flex; background-color: transparent; justify-content: center; align-items: center; width: 40px; color: black;">
@@ -60,115 +60,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import SwitchToogle from '../components/SwitchToogle.vue';
 import LineChart from '../components/LineChart.vue';
 import PageTabs from '../components/PageTabs.vue';
 import TrafficCard from '../components/TrafficCard.vue';
+import traffic from '../data/traffic.json';
 const currentTab = ref('Home');
 const switchValue = ref([false, false, false, false]);
-const trafficData = {
-  0: {
-    title: 'Total Traffic',
-    up: '6 Kbps',
-    down: '4.2 Kbps'
-  },
-  1: {
-    title: 'TCP Traffic',
-    up: '6 Kbps',
-    down: '4.2 Kbps'
-  },
-  2: {
-    title: 'UDP Traffic',
-    up: '6 Kbps',
-    down: '4.2 Kbps'
-  },
-  3: {
-    title: 'RTT Traffic',
-    up: '6 Kbps',
-    down: '4.2 Kbps'
-  }
-}
-const graphTitle = {
-  'CPU (%)': {
-    'chartData': {
-      labels: ['0', '25', '50', '100'],
-      datasets: [
-        {
-          label: 'CPU Usage',
-          backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(54,162,235,1)',
-          pointBackgroundColor: 'rgba(75,192,192,1)',
-          pointBorderColor: '#fff',
-          data: [50, 50, 50, 50],
-          fill: true,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 0
-        }
-      ]
-    }
-  },
-  'Memory (%)': {
-    'chartData': {
-      labels: ['0', '25', '50', '100'],
-      datasets: [
-        {
-          label: 'Memory Usage',
-          backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(54,162,235,1)',
-          pointBackgroundColor: 'rgba(75,192,192,1)',
-          pointBorderColor: '#fff',
-          data: [50, 50, 50, 50],
-          fill: true,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 0
-        }
-      ]
-    }
-  },
-  'Disk (%)': {
-    'chartData': {
-      labels: ['0', '25', '50', '100'],
-      datasets: [
-        {
-          label: 'Disk Usage',
-          backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(54,162,235,1)',
-          pointBackgroundColor: 'rgba(75,192,192,1)',
-          pointBorderColor: '#fff',
-          data: [50, 50, 50, 50],
-          fill: true,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 0
-        }
-      ]
-    }
-  }
-}
+const trafficData = ref(traffic.trafficData);
+const graphTitle = ref(traffic.graphTitle);
+const trafficChartData = ref(traffic.trafficChartData);
+
+const switchTitles = ['Home', 'Power On Bypass', 'Power Off Bypass', 'Software Bypass'];
 
 const cpuChartStyle = { height: '60px', background: '#f8f8ff' };
 const trafficChartStyle = { height: '800px', background: '#f0f8ff' };
 
-const trafficChartData = {
-  labels: ['0', '25', '50', '100'],
-  datasets: [
-    {
-      label: 'Traffic',
-      backgroundColor: 'rgba(54,162,235,0.2)',
-      borderColor: 'rgba(54,162,235,1)',
-      pointBackgroundColor: 'rgba(54,162,235,1)',
-      pointBorderColor: '#fff',
-      data: [40, 40, 40, 40],
-      fill: true,
-      tension: 0,
-      pointRadius: 0,
-      pointHoverRadius: 0
-    }
-  ]
-};
 
 const chartOptions = {
   responsive: true,
@@ -210,6 +118,7 @@ function tabChanger(tab) {
   currentTab.value = tab
   console.log('Tab changed to:', tab)
 }
+
 
 </script>
 
