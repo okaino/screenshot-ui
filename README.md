@@ -1,6 +1,13 @@
-# Vue 3 + Vite
+# Vue.js Projesi
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Bu proje [Vue.js](https://vuejs.org/) ile geliştirilmiştir. Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
-# screenshot-ui
+## Gereksinimler
+
+## Kurulum
+
+Projeyi klonladıktan sonra proje dizinine geçin ve bağımlılıkları yüklemek için şu komutu çalıştırın:
+
+```bash
+npm install
+npm run dev

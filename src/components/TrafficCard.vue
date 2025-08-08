@@ -1,14 +1,14 @@
 <template>
-    <div class="traffic" v-for="value in trafficData" :key="value.title">
+    <div class="traffic" v-for="(value, index) in trafficData" :key="value.title">
         <h4 style="font-weight: bold; padding-left: 20px; padding-right: 20px;">{{ value.title }}</h4>
         <div style="display: flex; white-space: nowrap; padding-right: 20px;">
-          <h4>Down:</h4>
-          <h4 style="color:blue"> {{ value.down }}</h4>
+          <h4>{{ value.down ? 'Down:' : 'LAN:' }}</h4>
+          <h4 style="color:blue"> {{ value.down ? value.down : value.LAN }}</h4>
 
         </div>
         <div style="display: flex; white-space: nowrap; padding-right: 20px;">
-          <h4>Up:</h4>
-          <h4 style="color:#42ecf5"> {{ value.up }}</h4>
+          <h4>{{ value.up ? 'Up:' : 'WAN:' }}</h4>
+          <h4 style="color:#42ecf5"> {{ value.up ? value.up : value.WAN }}</h4>
         </div>
       </div>
 </template>

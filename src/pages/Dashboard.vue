@@ -4,8 +4,8 @@
       <div class="user-card">
         <h4>Inventory</h4>
         <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start;">
-          <h4>Name: Basong</h4>
-          <h4>Serial No:</h4>
+          <h4>Name: {{userData.name}}</h4>
+          <h4>Serial No: {{userData.serial}}</h4>
         </div>
         <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start;">
           <div class="connected-light">
@@ -34,7 +34,7 @@
     </div>
     <br>
     <div class="dynamic-line">
-      <PageTabs @tab-change="tabChanger"/>
+      <PageTabs @tab-change="tabChanger" />
       <div class="hardware-progress">
         <div class="progress" v-for="(value, index) in graphTitle" :key="index">
           <h4>{{ index }}</h4>
@@ -44,18 +44,21 @@
       </div>
     </div>
     <br>
-    <div v-if="currentTab === 'Home'" >
-    <div class="dynamic-line">
-      <TrafficCard :trafficData="trafficData" />
+    <div v-if="currentTab === 'Home'">
+      <div class="dynamic-line">
+        <TrafficCard :trafficData="trafficData" />
 
+      </div>
+      <div class="chart-container">
+        <LineChart :chartData="trafficChartDataDownload" :chartOptions="chartOptionsYAxis" :chartStyle="trafficChartStyle"
+          :title="'Total Download'" :legend="true" />
+        <LineChart :chartData="trafficChartDataUpload" :chartOptions="chartOptionsYAxis" :chartStyle="trafficChartStyle"
+          :title="'Total Upload'" :legend="true" />
+      </div>
     </div>
-    <div class="chart-container">
-      <LineChart :chartData="trafficChartData" :chartOptions="chartOptionsYAxis" :chartStyle="trafficChartStyle"
-        :title="'Total Download'" :legend="true" />
-      <LineChart :chartData="trafficChartData" :chartOptions="chartOptionsYAxis" :chartStyle="trafficChartStyle"
-        :title="'Total Upload'" :legend="true" />
-    </div>
-    </div>
+    <div v-else-if="currentTab === 'Analysis'" style="display: flex; font-size: large; color: black;"><h2>Analysis</h2></div>
+    <div v-else-if="currentTab === 'Settings'" style="display: flex; font-size: large;"><h2>Settings</h2></div>
+    <div v-else-if="currentTab === 'Logs'" style="display: flex; font-size: large;"><h2>Logs</h2></div>
   </div>
 </template>
 
@@ -67,10 +70,13 @@ import PageTabs from '../components/PageTabs.vue';
 import TrafficCard from '../components/TrafficCard.vue';
 import traffic from '../data/traffic.json';
 const currentTab = ref('Home');
+const userData = ref(traffic.user);
 const switchValue = ref([false, false, false, false]);
 const trafficData = ref(traffic.trafficData);
 const graphTitle = ref(traffic.graphTitle);
 const trafficChartData = ref(traffic.trafficChartData);
+const trafficChartDataDownload = ref(traffic.trafficChartDataDownload);
+const trafficChartDataUpload = ref(traffic.trafficChartDataUpload);
 
 const switchTitles = ['Home', 'Power On Bypass', 'Power Off Bypass', 'Software Bypass'];
 
@@ -123,7 +129,6 @@ function tabChanger(tab) {
 </script>
 
 <style scoped>
-
 .progress {
   display: flex;
   align-items: center;

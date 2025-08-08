@@ -1,4 +1,8 @@
 {
+    "user":{
+        "name": "Basong",
+        "serial": "11121223234"
+    },
     "trafficChartData": {
         "labels": [
             "0",
@@ -26,6 +30,154 @@
             }
         ]
     },
+    "trafficChartDataDownload": {
+        "labels": [
+            "17 April",
+            "18 April",
+            "19 April",
+            "20 April",
+            "21 April",
+            "22 April",
+            "23 April",
+            "24 April",
+            "25 April",
+            "26 April",
+            "27 April",
+            "28 April",
+            "29 April",
+            "30 April"
+        ],
+        "datasets": [
+            {
+                "label": "MAX",
+                "backgroundColor": "rgba(54,162,235,0.2)",
+                "borderColor": "rgba(54,162,235,1)",
+                "pointBackgroundColor": "rgba(54,162,235,1)",
+                "pointBorderColor": "#fff",
+                "data": [
+                    1000,
+                    100,
+                    500,
+                    400,
+                    300,
+                    200,
+                    600,
+                    700,
+                    800,
+                    900,
+                    1100,
+                    500,
+                    600,
+                    400
+                ],
+                "fill": true,
+                "tension": 0,
+                "pointRadius": 0,
+                "pointHoverRadius": 0
+            },
+            {
+                "label": "AVG",
+                "backgroundColor": "rgba(54,162,235,0.2)",
+                "borderColor": "rgba(255,165,0,1)",
+                "pointBackgroundColor": "rgba(54,162,235,1)",
+                "pointBorderColor": "#fff",
+                "data": [
+                    100,
+                    90,
+                    400,
+                    600,
+                    200,
+                    100,
+                    400,
+                    300,
+                    400,
+                    500,
+                    300,
+                    200,
+                    100,
+                    200
+                ],
+                "fill": true,
+                "tension": 0,
+                "pointRadius": 0,
+                "pointHoverRadius": 0
+            }
+        ]
+    },
+    "trafficChartDataUpload": {
+        "labels": [
+            "17 April",
+            "18 April",
+            "19 April",
+            "20 April",
+            "21 April",
+            "22 April",
+            "23 April",
+            "24 April",
+            "25 April",
+            "26 April",
+            "27 April",
+            "28 April",
+            "29 April",
+            "30 April"
+        ],
+        "datasets": [
+            {
+                "label": "MAX",
+                "backgroundColor": "rgba(54,162,235,0.2)",
+                "borderColor": "rgba(54,162,235,1)",
+                "pointBackgroundColor": "rgba(54,162,235,1)",
+                "pointBorderColor": "#fff",
+                "data": [
+                    400,
+                    600,
+                    500,
+                    1100,
+                    900,
+                    800,
+                    700,
+                    600,
+                    200,
+                    300,
+                    400,
+                    500,
+                    100,
+                    1000
+                ],
+                "fill": true,
+                "tension": 0,
+                "pointRadius": 0,
+                "pointHoverRadius": 0
+            },
+            {
+                "label": "AVG",
+                "backgroundColor": "rgba(54,162,235,0.2)",
+                "borderColor": "rgba(255,165,0,1)",
+                "pointBackgroundColor": "rgba(54,162,235,1)",
+                "pointBorderColor": "#fff",
+                "data": [
+                    200,
+                    100,
+                    200,
+                    300,
+                    500,
+                    400,
+                    300,
+                    400,
+                    100,
+                    200,
+                    600,
+                    400,
+                    90,
+                    100
+                ],
+                "fill": true,
+                "tension": 0,
+                "pointRadius": 0,
+                "pointHoverRadius": 0
+            }
+        ]
+    },
     "trafficData": {
         "0": {
             "title": "Total Traffic",
@@ -43,9 +195,9 @@
             "down": "4.2 Kbps"
         },
         "3": {
-            "title": "RTT Traffic",
-            "up": "6 Kbps",
-            "down": "4.2 Kbps"
+            "title": "RTT",
+            "LAN": "1 ms",
+            "WAN": "1 ms"
         }
     },
     "graphTitle": {
