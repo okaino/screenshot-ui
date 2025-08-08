@@ -6,7 +6,6 @@
 </template>
 
 <script setup>
-// Settings logic here
 </script>
 
 <style scoped>

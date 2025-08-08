@@ -5,13 +5,13 @@
         <h4>Inventory</h4>
         <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start;">
           <h4>Name: {{userData.name}}</h4>
-          <h4>Serial No: {{userData.serial}}</h4>
+          <h4>Serial No:</h4>
         </div>
         <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start;">
           <div class="connected-light">
             <h6>CONNECTED</h6>
           </div>
-          <h4>11121223234</h4>
+          <h4>{{userData.serial}}</h4>
         </div>
       </div>
 
@@ -122,7 +122,6 @@ const chartOptionsYAxis = {
 };
 function tabChanger(tab) {
   currentTab.value = tab
-  console.log('Tab changed to:', tab)
 }
 
 
